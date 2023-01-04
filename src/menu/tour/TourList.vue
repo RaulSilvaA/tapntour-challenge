@@ -35,7 +35,6 @@
       const { fetchTours }             = useTourStore()
 
       fetchTours()
-      console.log(tours)
       return { tours , loading , error }
     },
   methods: {

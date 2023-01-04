@@ -14,8 +14,8 @@
             <dd class="text-slate-500" >{{ item.stop }}</dd>
           </div>
         </dl>
-        <DescriptionItem></DescriptionItem>
-        <FeatureItem stop="item.stop"/>
+        <DescriptionItem :description="item.resume"/>
+        <FeatureItem :duration="item.duration"/>
       </div>
     </article>  
 </template>
@@ -29,6 +29,7 @@
     DescriptionItem
     },
     props : ['item'],
+    //item: audio | duration | guide_id |id |image |lat |log |name |resume |stop| tour_id
     methods: {
   }
 }   

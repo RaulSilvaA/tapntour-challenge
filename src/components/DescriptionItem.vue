@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mt-2">
+  <div class="w-full my-4 ">
     <div class="flex items-top justify-between text-slate-500 text-sm text-justify " >
       {{description}}
     </div>   

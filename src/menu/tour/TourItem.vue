@@ -15,7 +15,7 @@
           </div>
         </dl>
         <!--TODO: get all elements from the API -->
-        <DescriptionItem  :description="item.resume" class="py-4"/>
+        <DescriptionItem  :description="item.resume"/>
         <FeatureItem :mode="item.mode" :stops="item.stops" :duration="item.duration"/>
       </div>
     </article>  
