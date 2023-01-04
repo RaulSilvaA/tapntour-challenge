@@ -9,7 +9,7 @@ import TourList from '@/menu/tour/TourList.vue'
 export default {
   name: 'TourView',
   components: {
-  TourList
+    TourList
   }
 }
 </script>

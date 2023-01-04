@@ -10,6 +10,6 @@ export default {
   name: 'GuideView',
   components: {
     GuideList
-}
+  }
 }
 </script>

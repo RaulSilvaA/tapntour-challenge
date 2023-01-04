@@ -12,6 +12,9 @@
 
 <script> 
   import { defineComponent,computed } from "vue"
+  import { storeToRefs } from 'pinia'
+  import { useGuideStore } from '@/stores/guide'
+
   import NavView       from '@/components/NavView.vue'
   import NavItem       from '@/components/NavItem.vue'
   import ListView      from '@/components/ListView.vue'
@@ -21,13 +24,19 @@
     components: {
     NavView,
     NavItem,
+    GuideItem,
     ListView,
-    GuideItem
-},
-    setup() {
   },
-  methods: {
+  setup() {
+      const { guides, loading, error }  = storeToRefs(useGuideStore())
+      const { fetchGuides }             = useGuideStore()
 
+      fetchGuides()
+
+      console.log(guides)
+      return { guides , loading , error }
+    },
+  methods: {
   }
 })
 </script>
