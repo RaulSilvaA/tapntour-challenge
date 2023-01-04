@@ -5,13 +5,15 @@
       <NavItem href="" v-on:click:active=true >Top Guide</NavItem>
     </NavView>
     <ListView>
-  
+      <p v-if="loading" >Loading guides...</p>
+      <p v-if="error">{{ error.message }}</p>
+      <GuideItem  v-if="guides" v-for="(item, index) in guides" :key="index" :item="item" />
     </ListView>
   </div>
 </template>
 
 <script> 
-  import { defineComponent,computed } from "vue"
+  import { defineComponent} from "vue"
   import { storeToRefs } from 'pinia'
   import { useGuideStore } from '@/stores/guide'
 
