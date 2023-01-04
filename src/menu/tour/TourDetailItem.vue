@@ -5,7 +5,7 @@
         <h2 class="font-semibold text-slate-900 truncate pr-20">{{ item.name }}</h2>
 
         <DescriptionItem :description="item.resume" class="justify-start"/>
-        
+
         <dl class="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div class="absolute top-0 right-0 flex items-center space-x-1">
             <dt class="text-sky-500">
@@ -17,9 +17,19 @@
             <dd class="text-slate-500" >{{ item.stop }}</dd>
           </div>
         </dl>
+        <!-- Maybe this informations is relevant in a future -->
+        <div class="grid grid-cols-2">
+          <div class= "flex w-full">
+          <span class="sr-only">{{ item.lat }}</span>
+        </div>
+        <div class= "flex w-full">
+          <span class="sr-only">{{ item.lon }}</span>
+        </div>
+        </div>  
+       
+        <FeatureItem :duration="item.duration" lan="EN | ES" class="items-end"/>
 
         
-        <FeatureItem :duration="item.duration" lan="EN | ES" class="items-end"/>
       </div>
     </article>  
 </template>
