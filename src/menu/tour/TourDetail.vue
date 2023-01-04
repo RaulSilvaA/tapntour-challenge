@@ -43,6 +43,7 @@
 import { defineComponent, computed } from "vue";
 import { storeToRefs } from 'pinia'
 import { useTourStore } from '@/stores/tour'
+import { useRoute } from "vue-router";
 
 import TourDetailItem from '@/menu/tour/TourDetailItem.vue'
 import ListView from '@/components/ListView.vue'
@@ -59,9 +60,11 @@ export default defineComponent({
   setup() {
     const { tour, loading, error } = storeToRefs(useTourStore())
     const { fetchTourbyId } = useTourStore()
+    const route = useRoute();
+    const tourId = route.query.id;
 
-    fetchTourbyId("1")
-    console.log(tour)
+    fetchTourbyId(tourId)
+    
     return { tour, loading, error }
   },
   methods: {

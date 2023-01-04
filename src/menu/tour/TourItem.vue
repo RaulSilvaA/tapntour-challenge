@@ -31,8 +31,9 @@
 },
     props : ['item'],
     methods: {
+    // ADDED: a way to save the id for the GET in next view 
     goToDetail() {
-      this.$router.push('/TourDetail')
+      this.$router.push({path: 'TourDetail' ,  query: { id: this.item.id }})
     }
   }
 }   

@@ -14,6 +14,7 @@
             <dd class="text-slate-500" >{{ item.stop }}</dd>
           </div>
         </dl>
+
         <DescriptionItem :description="item.resume"/>
         <FeatureItem :duration="item.duration" lan="EN | ES"/>
       </div>
