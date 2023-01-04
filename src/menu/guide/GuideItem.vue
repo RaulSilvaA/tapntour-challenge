@@ -17,15 +17,25 @@
             <dd class="text-slate-500" >{{ item.country }}</dd>
           </div>
         </dl>
+        
+        <!-- Description and rating -->
+        <DescriptionItem :description="item.bio"/>
+        
+        <FeatureItem :rating="item.rating" />
      
       </div>
     </article>  
   </template>
-  <script> 
+  <script>
+  import DescriptionItem from '@/components/DescriptionItem.vue';
+  import FeatureItem from '../../components/FeatureItem.vue';
+
 
   export default {
     components: {
-    },
+    DescriptionItem,
+    FeatureItem
+},
     props : ['item'],
     methods: {
     goToDetail() {

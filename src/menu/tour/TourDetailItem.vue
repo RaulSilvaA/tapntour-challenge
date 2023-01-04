@@ -15,7 +15,7 @@
           </div>
         </dl>
         <DescriptionItem :description="item.resume"/>
-        <FeatureItem :duration="item.duration"/>
+        <FeatureItem :duration="item.duration" lan="EN | ES"/>
       </div>
     </article>  
 </template>

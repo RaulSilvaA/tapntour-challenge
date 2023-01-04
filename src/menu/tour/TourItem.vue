@@ -16,7 +16,7 @@
         </dl>
         <!--TODO: get all elements from the API -->
         <DescriptionItem  :description="item.resume"/>
-        <FeatureItem :mode="item.mode" :stops="item.stops" :duration="item.duration"/>
+        <FeatureItem :mode="item.mode" :stops="item.stops" :duration="item.duration" lan="EN | ES"/>
       </div>
     </article>  
 </template>
