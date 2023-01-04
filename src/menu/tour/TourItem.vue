@@ -1,8 +1,11 @@
 <template>
     <article  @click="goToDetail()" class="flex items-start space-x-6 p-6">
       <img :src="item.image" alt="" class=" object-cover h-48 w-28 flex-none rounded-md bg-slate-100" />
-      <div class="min-w-0 relative flex-auto">
+      <div class="min-w-0  h-48 relative flex-auto grid grid-cols-1 gap-y-2 ">
         <h2 class="font-semibold text-slate-900 truncate pr-20">{{ item.name }}</h2>
+
+        <DescriptionItem  :description="item.resume"/>
+
         <dl class="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div class="absolute top-0 right-0 flex items-center space-x-1">
             <dt class="text-sky-500">
@@ -14,8 +17,6 @@
             <dd class="text-slate-500" >{{ item.stops }}</dd>
           </div>
         </dl>
-        <!--TODO: get all elements from the API -->
-        <DescriptionItem  :description="item.resume"/>
         <FeatureItem :mode="item.mode" :stops="item.stops" :duration="item.duration" lan="EN | ES"/>
       </div>
     </article>  

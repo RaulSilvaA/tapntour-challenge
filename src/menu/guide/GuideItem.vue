@@ -1,12 +1,15 @@
 <template>
     <article @click="goToDetail()" class="flex items-start space-x-6 p-6">
       <img :src="item.avatar" alt="" class=" object-cover h-48 w-28 flex-none rounded-full bg-slate-100" />
-      <div class="min-w-0 relative flex-auto">
+      <div class="min-w-0  h-48 relative flex-auto grid grid-cols-1 gap-y-2 ">
         <h2 class="font-semibold text-slate-900 truncate pr-20">{{ item.guidename }}</h2>
         <!-- If in the future we want to display this element, it is better in this position -->
         <div class= "w-full">
           <span class="sr-only">{{ item.bio }}</span>
         </div>
+
+        <DescriptionItem :description="item.bio"/>
+
         <dl class="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div class="absolute top-0 right-0 flex items-center space-x-1">
             <dt class="text-sky-500">
@@ -17,9 +20,6 @@
             <dd class="text-slate-500" >{{ item.country }}</dd>
           </div>
         </dl>
-        
-        <!-- Description and rating -->
-        <DescriptionItem :description="item.bio"/>
         
         <FeatureItem :rating="item.rating" />
      

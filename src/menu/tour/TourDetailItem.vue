@@ -1,8 +1,11 @@
 <template>
-    <article  class="flex items-start space-x-6 p-6">
+    <article  class="flex items-start space-x-6 p-6 ">
       <img :src="item.image" alt="" class=" object-cover h-48 w-28 flex-none rounded-md bg-slate-100" />
-      <div class="min-w-0 relative flex-auto">
+      <div class="min-w-0  h-48 relative flex-auto grid grid-cols-1 gap-y-2 ">
         <h2 class="font-semibold text-slate-900 truncate pr-20">{{ item.name }}</h2>
+
+        <DescriptionItem :description="item.resume" class="justify-start"/>
+        
         <dl class="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div class="absolute top-0 right-0 flex items-center space-x-1">
             <dt class="text-sky-500">
@@ -15,8 +18,8 @@
           </div>
         </dl>
 
-        <DescriptionItem :description="item.resume"/>
-        <FeatureItem :duration="item.duration" lan="EN | ES"/>
+        
+        <FeatureItem :duration="item.duration" lan="EN | ES" class="items-end"/>
       </div>
     </article>  
 </template>
